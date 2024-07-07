@@ -1,0 +1,48 @@
+access database:
+mysql -h flask-db.c9a06k6cqktv.ap-southeast-1.rds.amazonaws.com -P 3306 -u admin -p
+
+
+View databases: SHOW DATABASES;
+
+CREATE DATABASE my_flask_app;
+
+USE my_flask_app;
+
+
+CREATE TABLE user(
+	-> user_id INT NOT NULL AUTO_INCREMENT,
+	-> username VARCHAR(64) NOT NULL,
+	-> password VARCHAR(64) NOT NULL,
+	-> PRIMARY KEY(user_id)
+	-> );
+	
+SHOW TABLES;
+	
+INSERT INTO user VALUES('', 'jorge', '12345');
+
+SELECT * FROM user;
+
+
+MySQL [my_flask_app]> SELECT * FROM user;
+
++---------+----------+----------+
+| user_id | username | password |
++---------+----------+----------+
+|       1 | jorge    | 12345    |
++---------+----------+----------+
+1 row in set (0.002 sec)
+
+
+
+
+Exit from mysql: exit; OR Ctrl+D
+
+
+
+cat requirements.txt
+
+(The cat command reads files sequentially, displaying their content to the terminal.)
+
+$ pip install -r requirements.txt
+
+pip install mysql-connector-python
